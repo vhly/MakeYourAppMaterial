@@ -36,4 +36,8 @@ dependencies {
     compile 'com.android.support:cardview-v7:22.0.0'
     compile 'com.squareup.okhttp:okhttp:1.1.0'
     compile files('libs/volley.jar')
+
+    // Add Design support library
+    compile 'com.android.support:design:22.2.1'
+
 }
