@@ -8,17 +8,29 @@ buildscript {
 }
 apply plugin: 'com.android.application'
 
+apply plugin: 'idea'
+
 repositories {
     jcenter()
 }
 
+idea {
+
+    module{
+
+        downloadSources = true
+
+    }
+
+}
+
 android {
-    compileSdkVersion 22
-    buildToolsVersion "22.0.1"
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 22
+        minSdkVersion 15
+        targetSdkVersion 23
     }
 
     lintOptions {
@@ -28,16 +40,16 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:22.0.0'
-    compile 'com.android.support:support-v13:22.0.0'
-    compile 'com.android.support:appcompat-v7:22.0.0'
-    compile 'com.android.support:palette-v7:22.0.0'
-    compile 'com.android.support:recyclerview-v7:22.0.0'
-    compile 'com.android.support:cardview-v7:22.0.0'
+    compile 'com.android.support:support-v4:23.1.1'
+    compile 'com.android.support:support-v13:23.1.1'
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.android.support:palette-v7:23.1.1'
+    compile 'com.android.support:recyclerview-v7:23.1.1'
+    compile 'com.android.support:cardview-v7:23.1.1'
     compile 'com.squareup.okhttp:okhttp:1.1.0'
     compile files('libs/volley.jar')
 
     // Add Design support library
-    compile 'com.android.support:design:22.2.1'
+    compile 'com.android.support:design:23.1.1'
 
 }

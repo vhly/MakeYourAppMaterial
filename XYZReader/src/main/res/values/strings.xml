@@ -8,5 +8,8 @@
     <string name="action_share">Share</string>
 
     <string name="up">Up</string>
+    <string name="title_activity_toolbar_test">ToolbarTestActivity</string>
+
+    <string name="hello_world">Hello world!</string>
 
 </resources>
