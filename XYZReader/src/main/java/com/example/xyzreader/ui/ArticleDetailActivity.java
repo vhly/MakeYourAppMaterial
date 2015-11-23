@@ -54,6 +54,9 @@ public class ArticleDetailActivity extends AppCompatActivity
         mToolbar = (Toolbar) findViewById(R.id.common_tool_bar);
         setSupportActionBar(mToolbar);
 
+        mToolbar.setTitle(R.string.detail_title);
+
+
         getLoaderManager().initLoader(0, null, this);
 
         mPagerAdapter = new MyPagerAdapter(getFragmentManager());
@@ -78,6 +81,10 @@ public class ArticleDetailActivity extends AppCompatActivity
                     mCursor.moveToPosition(position);
                 }
                 mSelectedItemId = mCursor.getLong(ArticleLoader.Query._ID);
+                String title = mCursor.getString(ArticleLoader.Query.TITLE);
+                if (title != null) {
+                    mToolbar.setTitle(title);
+                }
                 updateUpButtonPosition();
             }
         });

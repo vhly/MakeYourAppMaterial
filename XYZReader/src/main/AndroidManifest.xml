@@ -52,7 +52,7 @@
 
         <activity
             android:name=".test.ToolbarTestActivity"
-            android:label="@string/title_activity_toolbar_test" >
+        >
 
         </activity>
     </application>

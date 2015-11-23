@@ -1,0 +1,13 @@
+<resources>
+
+    <string name="welcome_xyz_reader">欢迎使用 XYZ Reader!</string>
+
+    <string name="action_refresh">刷新</string>
+    <string name="action_settings">设置</string>
+    <string name="action_share">分享</string>
+
+    <string name="up">上一级</string>
+
+    <string name="detail_title">详情</string>
+
+</resources>
