@@ -38,7 +38,7 @@ public class ArticleDetailActivity extends AppCompatActivity
 //    private View mUpButtonContainer;
 //    private View mUpButton;
 
-    private Toolbar mToolbar;
+//    private Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,10 +51,10 @@ public class ArticleDetailActivity extends AppCompatActivity
         setContentView(R.layout.activity_article_detail);
 
         // Use Toolbar replace ActionBar
-        mToolbar = (Toolbar) findViewById(R.id.common_tool_bar);
-        setSupportActionBar(mToolbar);
+//        mToolbar = (Toolbar) findViewById(R.id.common_tool_bar);
+//        setSupportActionBar(mToolbar);
 
-        mToolbar.setTitle(R.string.detail_title);
+//        mToolbar.setTitle(R.string.detail_title);
 
 
         getLoaderManager().initLoader(0, null, this);
@@ -81,10 +81,10 @@ public class ArticleDetailActivity extends AppCompatActivity
                     mCursor.moveToPosition(position);
                 }
                 mSelectedItemId = mCursor.getLong(ArticleLoader.Query._ID);
-                String title = mCursor.getString(ArticleLoader.Query.TITLE);
-                if (title != null) {
-                    mToolbar.setTitle(title);
-                }
+//                String title = mCursor.getString(ArticleLoader.Query.TITLE);
+//                if (title != null) {
+//                    mToolbar.setTitle(title);
+//                }
                 updateUpButtonPosition();
             }
         });
@@ -154,12 +154,12 @@ public class ArticleDetailActivity extends AppCompatActivity
         mPagerAdapter.notifyDataSetChanged();
     }
 
-    public void onUpButtonFloorChanged(long itemId, ArticleDetailFragment fragment) {
-        if (itemId == mSelectedItemId) {
-            mSelectedItemUpButtonFloor = fragment.getUpButtonFloor();
-            updateUpButtonPosition();
-        }
-    }
+//    public void onUpButtonFloorChanged(long itemId, ArticleDetailFragment fragment) {
+//        if (itemId == mSelectedItemId) {
+//            mSelectedItemUpButtonFloor = fragment.getUpButtonFloor();
+//            updateUpButtonPosition();
+//        }
+//    }
 
     private void updateUpButtonPosition() {
 //        int upButtonNormalBottom = mTopInset + mUpButton.getHeight();
@@ -176,7 +176,7 @@ public class ArticleDetailActivity extends AppCompatActivity
             super.setPrimaryItem(container, position, object);
             ArticleDetailFragment fragment = (ArticleDetailFragment) object;
             if (fragment != null) {
-                mSelectedItemUpButtonFloor = fragment.getUpButtonFloor();
+//                mSelectedItemUpButtonFloor = fragment.getUpButtonFloor();
                 updateUpButtonPosition();
             }
         }
