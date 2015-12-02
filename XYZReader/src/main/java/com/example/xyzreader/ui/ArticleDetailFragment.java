@@ -1,5 +1,6 @@
 package com.example.xyzreader.ui;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.app.LoaderManager;
 import android.content.Intent;
@@ -34,7 +35,7 @@ import com.example.xyzreader.data.ArticleLoader;
  * tablets) or a {@link ArticleDetailActivity} on handsets.
  */
 public class ArticleDetailFragment extends Fragment implements
-        LoaderManager.LoaderCallbacks<Cursor> {
+        LoaderManager.LoaderCallbacks<Cursor>, View.OnClickListener {
     private static final String TAG = "ArticleDetailFragment";
 
     public static final String ARG_ITEM_ID = "item_id";
@@ -107,6 +108,11 @@ public class ArticleDetailFragment extends Fragment implements
         mRootView = inflater.inflate(R.layout.fragment_article_detail, container, false);
 
         mToolbar = (Toolbar) mRootView.findViewById(R.id.toolbar);
+
+        mToolbar.setNavigationIcon(R.drawable.ic_arrow_back);
+
+        // set Toolbar navigation
+        mToolbar.setNavigationOnClickListener(this);
 
         mPhotoView = (ImageView) mRootView.findViewById(R.id.photo);
 
@@ -253,6 +259,14 @@ public class ArticleDetailFragment extends Fragment implements
     public void onLoaderReset(Loader<Cursor> cursorLoader) {
         mCursor = null;
         bindViews();
+    }
+
+    @Override
+    public void onClick(View v) {
+        Activity activity = getActivity();
+        if (activity != null) {
+            activity.finish();
+        }
     }
 
 //    public int getUpButtonFloor() {

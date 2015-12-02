@@ -10,7 +10,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            android:elevation="8dp"
+            app:elevation="@dimen/common_elevation"
             app:theme="@style/ThemeOverlay.AppCompat.ActionBar"
     >
 
